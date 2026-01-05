@@ -1,0 +1,276 @@
+{
+  "categories": {
+    "functionality": {
+      "stop_on_first": false,
+      "rules": [
+        {
+          "id": "functionality_form_basic_contact",
+          "priority": 10,
+          "conditions": { "functionality.form": {"$equals": "basic_contact"} },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from functionality form",
+            "value": 150
+          }
+        },
+        {
+          "id": "functionality_form_extended",
+          "priority": 20,
+          "conditions": { "functionality.form": {"$equals": "extended"} },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from functionality form",
+            "value": 350
+          }
+        },
+        {
+          "id": "functionality_form_multi_step",
+          "priority": 30,
+          "conditions": { "functionality.form": {"$equals": "multi_step"} },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from functionality form",
+            "value": 700
+          }
+        },
+        {
+          "id": "functionality_email_integration",
+          "priority": 40,
+          "conditions": {
+            "functionality.email_integration": {"$equals": true}
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from functionality email integration",
+            "value": 250
+          }
+        },
+        {
+          "id": "functionality_crm_integration",
+          "priority": 50,
+          "conditions": { "functionality.crm_integration": {"$equals": true} },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from functionality CRM integration",
+            "value": 600
+          }
+        },
+        {
+          "id": "functionality_analytics_maintenance_basic_ga",
+          "priority": 60,
+          "conditions": {
+            "functionality.analytics_maintenance": {"$equals": "basic_ga"}
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from functionality analytics maintenance",
+            "value": 100
+          }
+        },
+        {
+          "id": "functionality_analytics_maintenance_extended",
+          "priority": 70,
+          "conditions": {
+            "functionality.analytics_maintenance": {"$equals": "extended"}
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from functionality analytics maintenance",
+            "value": 300
+          }
+        },
+        {
+          "id": "functionality_analytics_maintenance_with_goals",
+          "priority": 80,
+          "conditions": {
+            "functionality.analytics_maintenance": {"$equals": "with_goals"}
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from functionality analytics maintenance",
+            "value": 600
+          }
+        },
+        {
+          "id": "functionality_chat_support_widget",
+          "priority": 90,
+          "conditions": {
+            "functionality.chat_support_widget": {"$equals": true}
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from functionality chat support widget",
+            "value": 150
+          }
+        },
+        {
+          "id": "functionality_payment_integration",
+          "priority": 100,
+          "conditions": {
+            "functionality.payment_integration": {"$equals": true}
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from functionality payment_integration",
+            "value": 800
+          }
+        },
+        {
+          "id": "functionality_payment_integration",
+          "priority": 110,
+          "conditions": {
+            "functionality.payment_integration": {"$equals": true}
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from functionality payment_integration",
+            "value": 800
+          }
+        },
+        {
+          "id": "functionality_geolocation",
+          "priority": 120,
+          "conditions": { "functionality.geolocation": {"$equals": true} },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from functionality geolocation",
+            "value": 400
+          }
+        },
+        {
+          "id": "functionality_geolocation_with_localization",
+          "priority": 130,
+          "conditions": {
+            "$and": [
+              { "functionality.geolocation": {"$equals": true} },
+              { "content.localization.count": {"$greater-than": 1} }
+            ]
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from functionality geolocation with localization",
+            "value": 300
+          }
+        },
+        {
+          "id": "functionality_social_media_integration_none",
+          "priority": 140,
+          "conditions": {
+            "functionality.social_media_integration": {"$equals": "none"}
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from functionality social medial integration",
+            "value": 0
+          }
+        },
+        {
+          "id": "functionality_social_media_integration_basic_buttons",
+          "priority": 150,
+          "conditions": {
+            "functionality.social_media_integration": {
+              "$equals": "basic_buttons"
+            }
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from functionality social medial integration",
+            "value": 100
+          }
+        },
+        {
+          "id": "functionality_social_media_integration_feed",
+          "priority": 160,
+          "conditions": {
+            "functionality.social_media_integration": {
+              "$equals": "feed_integration"
+            }
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from functionality social media integration",
+            "value": 400
+          }
+        },
+        {
+          "id": "functionality_social_media_integration_advanced_api",
+          "priority": 170,
+          "conditions": {
+            "functionality.social_media_integration": {
+              "$equals": "advanced_api"
+            }
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from functionality social media integration",
+            "value": 800
+          }
+        },
+        {
+          "id": "functionality_calendar_booking_system",
+          "priority": 180,
+          "conditions": {
+            "functionality.calendar_booking_system": {"$equals": true}
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from functionality calendar booking system",
+            "value": 1000
+          }
+        },
+        {
+          "id": "functionality_calendar_booking_system_with_payment_integration",
+          "priority": 190,
+          "conditions": {
+            "$and": [
+              { "functionality.calendar_booking_system": {"$equals": true} },
+              { "functionality.payment_integration": {"$equals": true} }
+            ]
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from functionality calendar booking system with payment integration (appointment scheduling)",
+            "value": 500
+          }
+        },
+        {
+          "id": "functionality_user_auth",
+          "priority": 200,
+          "conditions": { "functionality.user_auth": {"$equals": true} },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from functionality user auth (login/register)",
+            "value": 800
+          }
+        },
+        {
+          "id": "functionality_database_integration",
+          "priority": 210,
+          "conditions": {
+            "functionality.database_integration": {"$equals": true}
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from functionality database integration",
+            "value": 1200
+          }
+        },
+        {
+          "id": "functionality_database_integration_with_sensitive_data",
+          "priority": 220,
+          "conditions": {
+            "$and": [
+              { "functionality.user_auth": {"$equals": true} },
+              { "functionality.database_integration": {"$equals": true} }
+            ]
+          },
+          "action": "warning",
+          "metadata": {
+            "description": "Security improvements are necessary when implementing databases with sensitive data"
+          }
+        }
+      ]
+    }
+  }
+}
+

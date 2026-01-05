@@ -1,0 +1,121 @@
+{
+  "categories": {
+    "base_parameters": {
+      "stop_on_first": false,
+      "rules": [
+        {
+          "id": "calculate_sections_3_5",
+          "priority": 10,
+          "conditions": {
+            "$and": [
+              { "base_parameters.base_price": {"$greater-than": 0} },
+              {
+                "base_parameters.section_count": {"$greater-than-or-equals": 3}
+              },
+              { "base_parameters.section_count": {"$less-than": 5} }
+            ]
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from number of sections",
+            "value": 300
+          }
+        },
+        {
+          "id": "calculate_sections_5_8",
+          "priority": 20,
+          "conditions": {
+            "$and": [
+              { "base_parameters.base_price": {"$greater-than": 0} },
+              {
+                "base_parameters.section_count": {"$greater-than-or-equals": 5}
+              },
+              { "base_parameters.section_count": {"$less-than": 8} }
+            ]
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from number of sections",
+            "value": 600
+          }
+        },
+        {
+          "id": "calculate_sections_8_12",
+          "priority": 30,
+          "conditions": {
+            "$and": [
+              { "base_parameters.base_price": {"$greater-than": 0} },
+              {
+                "base_parameters.section_count": {"$greater-than-or-equals": 8}
+              },
+              { "base_parameters.section_count": {"$less-than": 12} }
+            ]
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from number of sections",
+            "value": 1000
+          }
+        },
+        {
+          "id": "calculate_sections_12_more",
+          "priority": 40,
+          "conditions": {
+            "$and": [
+              { "base_parameters.base_price": {"$greater-than": 0} },
+              {
+                "base_parameters.section_count": {"$greater-than-or-equals": 12}
+              }
+            ]
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from number of sections",
+            "value": 1500
+          }
+        },
+        {
+          "id": "source_of_design_is_template",
+          "priority": 50,
+          "conditions": {
+            "$and": [
+              { "base_parameters.base_price": {"$greater-than": 0} },
+              { "base_parameters.source_of_design": {"$equals": "template"} }
+            ]
+          },
+          "action": "multiply",
+          "metadata": {"value": 1.0}
+        },
+        {
+          "id": "source_of_design_is_partially_custom",
+          "priority": 60,
+          "conditions": {
+            "$and": [
+              { "base_parameters.base_price": {"$greater-than": 0} },
+              {
+                "base_parameters.source_of_design": {
+                  "$equals": "partial_custom"
+                }
+              }
+            ]
+          },
+          "action": "multiply",
+          "metadata": {"value": 1.8}
+        },
+        {
+          "id": "source_of_design_is_fully_custom",
+          "priority": 70,
+          "conditions": {
+            "$and": [
+              { "base_parameters.base_price": {"$greater-than": 0} },
+              { "base_parameters.source_of_design": {"$equals": "full_custom"} }
+            ]
+          },
+          "action": "multiply",
+          "metadata": {"value": 3.0}
+        }
+      ]
+    }
+  }
+}
+

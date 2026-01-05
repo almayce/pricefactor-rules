@@ -1,0 +1,187 @@
+{
+  "categories": {
+    "support": {
+      "stop_on_first": false,
+      "rules": [
+        {
+          "id": "support_postproduction_months",
+          "priority": 10,
+          "conditions": { "support.postproduction": {"$equals": true} },
+          "action": "multiply_path",
+          "metadata": {
+            "description": "Calculate base price from support postproduction",
+            "path": "support.postproduction.months_count",
+            "value": 150
+          }
+        },
+        {
+          "id": "support_postproduction_months_discount",
+          "priority": 20,
+          "conditions": {
+            "support.postproduction_months.count": {"$greater-than": 6}
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from support postproduction",
+            "value": 0.8
+          }
+        },
+        {
+          "id": "support_bug_fixes_days",
+          "priority": 30,
+          "conditions": {
+            "support.bug_fixes_months.count": {"$greater-than-or-equals": 1}
+          },
+          "action": "multiply_path",
+          "metadata": {
+            "description": "Calculate base price from support bug fixes",
+            "path": "support.bug_fixes_months.count",
+            "value": 100
+          }
+        },
+        {
+          "id": "support_bug_fixes_days_subtract_first_month",
+          "priority": 40,
+          "conditions": {
+            "support.bug_fixes_days.count": {"$greater-than-or-equals": 1}
+          },
+          "action": "subtract",
+          "metadata": {
+            "description": "Calculate base price from support bug fixes",
+            "value": 100
+          }
+        },
+        {
+          "id": "support_bug_fixes_days_subtract_first_month",
+          "priority": 50,
+          "conditions": {
+            "support.bug_fixes_days.count": {"$greater-than-or-equals": 1}
+          },
+          "action": "subtract",
+          "metadata": {
+            "description": "Calculate base price from support bug fixes",
+            "value": 100
+          }
+        },
+        {
+          "id": "support_training_demonstration",
+          "priority": 60,
+          "conditions": {
+            "support.training_demonstration": {"$equals": true}
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from support training demonstration",
+            "value": 300
+          }
+        },
+        {
+          "id": "support_training_demonstration",
+          "priority": 70,
+          "conditions": {
+            "support.training_demonstration": {"$equals": true}
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from support training demonstration",
+            "value": 300
+          }
+        },
+        {
+          "id": "support_hosting_management",
+          "priority": 80,
+          "conditions": { "support.hosting_management": {"$equals": true} },
+          "action": "multiply_path",
+          "metadata": {
+            "description": "Calculate base price from support hosting management",
+            "path": "support.hosting_management.months_count",
+            "value": 50
+          }
+        },
+        {
+          "id": "support_domain_management",
+          "priority": 90,
+          "conditions": { "support.domain_management": {"$equals": true} },
+          "action": "multiply_path",
+          "metadata": {
+            "description": "Calculate base price from support domain management",
+            "path": "support.domain_management.months_count",
+            "value": 20
+          }
+        },
+        {
+          "id": "support_ssl_certificate",
+          "priority": 100,
+          "conditions": {
+            "$and": [
+              { "support.hosting_management": {"$equals": true} },
+              { "support.ssl_certificate": {"$equals": true} }
+            ]
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from support ssl certificate",
+            "value": 100
+          }
+        },
+        {
+          "id": "support_email_setup_custom_domain",
+          "priority": 110,
+          "conditions": {
+            "$and": [
+              { "support.hosting_management": {"$equals": true} },
+              { "support.ssl_certificate": {"$equals": true} }
+            ]
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from support email setup custom domain",
+            "value": 200
+          }
+        },
+        {
+          "id": "support_monitoring_uptime",
+          "priority": 120,
+          "conditions": {
+            "$and": [
+              { "support.hosting_management": {"$equals": false} },
+              { "support.monitoring_uptime": {"$equals": true} }
+            ]
+          },
+          "action": "multiply_path",
+          "metadata": {
+            "description": "Calculate base price from support monitoring uptime",
+            "path": "support.monitoring_uptime.months_count",
+            "value": 80
+          }
+        },
+        {
+          "id": "support_backup_automation",
+          "priority": 130,
+          "conditions": { "support.backup_automation": {"$equals": false} },
+          "action": "multiply_path",
+          "metadata": {
+            "description": "Calculate base price from support backup automation",
+            "path": "support.backup_automation.months_count",
+            "value": 50
+          }
+        },
+        {
+          "id": "support_backup_automation",
+          "priority": 140,
+          "conditions": {
+            "$and": [
+              { "support.backup_automation": {"$equals": true} },
+              { "functionality.database_integration": {"$equals": true} }
+            ]
+          },
+          "action": "warning",
+          "metadata": {
+            "description": "Backup automation should be implemented for database integration"
+          }
+        }
+      ]
+    }
+  }
+}
+

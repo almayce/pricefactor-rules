@@ -1,0 +1,303 @@
+{
+  "categories": {
+    "customer_characteristics": {
+      "stop_on_first": false,
+      "rules": [
+        {
+          "id": "customer_characteristics_company_size_solo",
+          "priority": 10,
+          "conditions": {
+            "customer_characteristics.company_size": {"$equals": 1}
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from company size",
+            "value": 1.0
+          }
+        },
+        {
+          "id": "customer_characteristics_company_size_small",
+          "priority": 20,
+          "conditions": {
+            "$and": [
+              {
+                "customer_characteristics.company_size": {
+                  "$greater-than-or-equals": 1
+                }
+              },
+              { "customer_characteristics.company_size": {"$less-than": 10} }
+            ]
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from company size",
+            "value": 1.1
+          }
+        },
+        {
+          "id": "customer_characteristics_company_size_smb",
+          "priority": 30,
+          "conditions": {
+            "$and": [
+              {
+                "customer_characteristics.company_size": {
+                  "$greater-than-or-equals": 10
+                }
+              },
+              { "customer_characteristics.company_size": {"$less-than": 50} }
+            ]
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from company size",
+            "value": 1.3
+          }
+        },
+        {
+          "id": "customer_characteristics_company_size_midmarket",
+          "priority": 40,
+          "conditions": {
+            "$and": [
+              {
+                "customer_characteristics.company_size": {
+                  "$greater-than-or-equals": 10
+                }
+              },
+              { "customer_characteristics.company_size": {"$less-than": 50} }
+            ]
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from company size",
+            "value": 1.5
+          }
+        },
+        {
+          "id": "customer_characteristics_company_size_enterprise",
+          "priority": 50,
+          "conditions": {
+            "customer_characteristics.company_size": {
+              "$greater-than-or-equals": 500
+            }
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from company size",
+            "value": 2.0
+          }
+        },
+        {
+          "id": "customer_characteristics_industry_common",
+          "priority": 60,
+          "conditions": {
+            "$and": [
+              {
+                "customer_characteristics.industry_type": {"$equals": "common"}
+              }
+            ]
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from industry type",
+            "value": 1.0
+          }
+        },
+        {
+          "id": "customer_characteristics_industry_tech",
+          "priority": 70,
+          "conditions": {
+            "$and": [
+              { "customer_characteristics.industry_type": {"$equals": "tech"} }
+            ]
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from industry type",
+            "value": 1.1
+          }
+        },
+        {
+          "id": "customer_characteristics_industry_finance",
+          "priority": 80,
+          "conditions": {
+            "$and": [
+              {
+                "customer_characteristics.industry_type": {"$equals": "finance"}
+              }
+            ]
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from industry type",
+            "value": 1.4
+          }
+        },
+        {
+          "id": "customer_characteristics_industry_healthcare",
+          "priority": 90,
+          "conditions": {
+            "$and": [
+              {
+                "customer_characteristics.industry_type": {
+                  "$equals": "healthcare"
+                }
+              }
+            ]
+          },
+          "action": "healthcare",
+          "metadata": {
+            "description": "Calculate base price from industry type",
+            "value": 1.5
+          }
+        },
+        {
+          "id": "customer_characteristics_industry_ecommerce",
+          "priority": 100,
+          "conditions": {
+            "$and": [
+              {
+                "customer_characteristics.industry_type": {
+                  "$equals": "ecommerce"
+                }
+              }
+            ]
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from industry type",
+            "value": 1.2
+          }
+        },
+        {
+          "id": "customer_characteristics_industry_legal",
+          "priority": 110,
+          "conditions": {
+            "$and": [
+              { "customer_characteristics.industry_type": {"$equals": "legal"} }
+            ]
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from industry type",
+            "value": 1.4
+          }
+        },
+        {
+          "id": "customer_characteristics_industry_government",
+          "priority": 120,
+          "conditions": {
+            "$and": [
+              {
+                "customer_characteristics.industry_type": {
+                  "$equals": "government"
+                }
+              }
+            ]
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from industry type",
+            "value": 1.6
+          }
+        },
+        {
+          "id": "customer_characteristics_business_type_b2c",
+          "priority": 130,
+          "conditions": {
+            "$and": [
+              { "customer_characteristics.business_type": {"$equals": "b2c"} }
+            ]
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from business type",
+            "value": 1.0
+          }
+        },
+        {
+          "id": "customer_characteristics_business_type_b2b",
+          "priority": 140,
+          "conditions": {
+            "$and": [
+              { "customer_characteristics.business_type": {"$equals": "b2b"} }
+            ]
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from business type",
+            "value": 1.15
+          }
+        },
+        {
+          "id": "customer_characteristics_business_type_b2g",
+          "priority": 150,
+          "conditions": {
+            "$and": [
+              { "customer_characteristics.business_type": {"$equals": "b2g"} }
+            ]
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from business type",
+            "value": 1.3
+          }
+        },
+        {
+          "id": "customer_characteristics_reputation_risk_low",
+          "priority": 160,
+          "conditions": {
+            "$and": [
+              {
+                "customer_characteristics.business_type": {
+                  "$equals": "reputation_risk_low"
+                }
+              }
+            ]
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from reputation risk",
+            "value": 1.0
+          }
+        },
+        {
+          "id": "customer_characteristics_reputation_risk_middle",
+          "priority": 170,
+          "conditions": {
+            "$and": [
+              {
+                "customer_characteristics.business_type": {
+                  "$equals": "reputation_risk_middle"
+                }
+              }
+            ]
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from reputation risk",
+            "value": 1.1
+          }
+        },
+        {
+          "id": "customer_characteristics_reputation_risk_high",
+          "priority": 180,
+          "conditions": {
+            "$and": [
+              {
+                "customer_characteristics.business_type": {
+                  "$equals": "reputation_risk_high"
+                }
+              }
+            ]
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from reputation risk",
+            "value": 1.3
+          }
+        }
+      ]
+    }
+  }
+}
+

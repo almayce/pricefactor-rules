@@ -1,0 +1,347 @@
+{
+  "categories": {
+    "working_process": {
+      "stop_on_first": false,
+      "rules": [
+        {
+          "id": "working_process_eta_14",
+          "priority": 10,
+          "conditions": {
+            "working_process.eta": {
+              "$less-than": 14
+            }
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from eta",
+            "value": 1.5
+          }
+        },
+        {
+          "id": "working_process_eta_7",
+          "priority": 20,
+          "conditions": {
+            "working_process.eta": {
+              "$less-than": 7
+            }
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from eta",
+            "value": 2
+          }
+        },
+        {
+          "id": "working_process_eta_7_rush_with_customization",
+          "priority": 30,
+          "conditions": {
+            "$and": [
+              {
+                "working_process.eta": {
+                  "$less-than": 7
+                }
+              },
+              {
+                "$or": [
+                  {
+                    "base_parameters.source_of_design": {
+                      "$equals": "partial_custom"
+                    }
+                  },
+                  {
+                    "base_parameters.source_of_design": {
+                      "$equals": "full_custom"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from eta and customization level",
+            "value": 2.5
+          }
+        },
+        {
+          "id": "working_process_fixes_count",
+          "priority": 40,
+          "conditions": {
+            "working_process.fixes_count": {
+              "$less-than": 4
+            }
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from fixes count (risk and time)",
+            "value": 1
+          }
+        },
+        {
+          "id": "working_process_fixes_count",
+          "priority": 50,
+          "conditions": {
+            "working_process.fixes_count": {
+              "$less-than": 6
+            }
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from fixes count (risk and time)",
+            "value": 1.15
+          }
+        },
+        {
+          "id": "working_process_fixes_count",
+          "priority": 60,
+          "conditions": {
+            "working_process.fixes_count": {
+              "$greater-than": 6
+            }
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from fixes count (risk and time)",
+            "value": 1.4
+          }
+        },
+        {
+          "id": "working_process_fixes_count",
+          "priority": 70,
+          "conditions": {
+            "$and": [
+              {
+                "working_process.fixes_count": {
+                  "$greater-than": 6
+                }
+              },
+              {
+                "customer_characteristics.company_size": {
+                  "$greater-than-or-equals": 500
+                }
+              }
+            ]
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from fixes count (risk and time)",
+            "value": 2.5
+          }
+        },
+        {
+          "id": "working_process_communication_format_async",
+          "priority": 80,
+          "conditions": {
+            "working_process.communication_format": {
+              "$equals": "async"
+            }
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from communication format",
+            "value": 1
+          }
+        },
+        {
+          "id": "working_process_communication_format_regular_calls",
+          "priority": 90,
+          "conditions": {
+            "working_process.communication_format": {
+              "$equals": "regular_calls"
+            }
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from communication format",
+            "value": 1.15
+          }
+        },
+        {
+          "id": "working_process_communication_format_on_site",
+          "priority": 100,
+          "conditions": {
+            "working_process.communication_format": {
+              "$equals": "on_site"
+            }
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from communication format",
+            "value": 1.4
+          }
+        },
+        {
+          "id": "working_process_communication_format_on_site_rush",
+          "priority": 110,
+          "conditions": {
+            "$and": [
+              {
+                "working_process.communication_format": {
+                  "$equals": "on_site"
+                }
+              },
+              {
+                "working_process.eta": {
+                  "$less-than": 14
+                }
+              }
+            ]
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from communication format",
+            "value": 1.8
+          }
+        },
+        {
+          "id": "working_process_communication_format_on_site_rush_rush",
+          "priority": 120,
+          "conditions": {
+            "$and": [
+              {
+                "working_process.communication_format": {
+                  "$equals": "on_site"
+                }
+              },
+              {
+                "working_process.eta": {
+                  "$less-than": 7
+                }
+              }
+            ]
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from communication format",
+            "value": 3.6
+          }
+        },
+        {
+          "id": "working_process_provide_sources",
+          "priority": 130,
+          "conditions": {
+            "working_process.provide_sources": {
+              "$equals": true
+            }
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from provide sources",
+            "value": 300
+          }
+        },
+        {
+          "id": "working_process_provide_sources_with_customization",
+          "priority": 140,
+          "conditions": {
+            "$and": [
+              {
+                "working_process.provide_sources": {
+                  "$equals": true
+                }
+              },
+              {
+                "$or": [
+                  {
+                    "base_parameters.source_of_design": {
+                      "$equals": "partial_custom"
+                    }
+                  },
+                  {
+                    "base_parameters.source_of_design": {
+                      "$equals": "full_custom"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from provide sources with customization",
+            "value": 500
+          }
+        },
+        {
+          "id": "working_process_nda",
+          "priority": 150,
+          "conditions": {
+            "working_process.nda": {
+              "$equals": true
+            }
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from nda",
+            "value": 100
+          }
+        },
+        {
+          "id": "working_process_contract_type_simple",
+          "priority": 160,
+          "conditions": {
+            "working_process.contract": {
+              "$equals": "simple"
+            }
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from contract type",
+            "value": 0
+          }
+        },
+        {
+          "id": "working_process_contract_type_standart",
+          "priority": 170,
+          "conditions": {
+            "working_process.contract": {
+              "$equals": "standart"
+            }
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from contract type",
+            "value": 150
+          }
+        },
+        {
+          "id": "working_process_contract_type_legal",
+          "priority": 170,
+          "conditions": {
+            "working_process.contract": {
+              "$equals": "legal"
+            }
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from contract type",
+            "value": 500
+          }
+        },
+        {
+          "id": "working_process_contract_type_legal_enterprise",
+          "priority": 180,
+          "conditions": {
+            "$and": [
+              {
+                "working_process.contract": {
+                  "$equals": "legal"
+                }
+              },
+              {
+                "customer_characteristics.company_size": {
+                  "$greater-than-or-equals": 500
+                }
+              }
+            ]
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from contract type",
+            "value": 0
+          }
+        }
+      ]
+    }
+  }
+}

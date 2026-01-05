@@ -1,0 +1,188 @@
+{
+  "categories": {
+    "content": {
+      "stop_on_first": false,
+      "rules": [
+        {
+          "id": "content_text_source_provided",
+          "priority": 10,
+          "conditions": { "content.source": {"$equals": "provided"} },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from text content source",
+            "value": 1.0
+          }
+        },
+        {
+          "id": "content_text_source_copywriting",
+          "priority": 20,
+          "conditions": { "content.source": {"$equals": "copywriting"} },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from text content source",
+            "value": 1.2
+          }
+        },
+        {
+          "id": "content_text_source_full_development",
+          "priority": 30,
+          "conditions": {
+            "content.text.source": {"$equals": "full_development"}
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from text content source",
+            "value": 1.6
+          }
+        },
+        {
+          "id": "content_images_source_provided",
+          "priority": 40,
+          "conditions": { "content.images.source": {"$equals": "provided"} },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from images content source",
+            "value": 1.0
+          }
+        },
+        {
+          "id": "content_images_source_stocks",
+          "priority": 50,
+          "conditions": { "content.images.source": {"$equals": "stocks"} },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from images content source",
+            "value": 1.2
+          }
+        },
+        {
+          "id": "content_images_source_custom",
+          "priority": 60,
+          "conditions": { "content.images.source": {"$equals": "custom"} },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from images content source",
+            "value": 1.6
+          }
+        },
+        {
+          "id": "content_images_count",
+          "priority": 70,
+          "conditions": {
+            "content.images.count": {"$greater-than-or-equals": 3}
+          },
+          "action": "multiply_path",
+          "metadata": {
+            "description": "Calculate base price from images content count",
+            "path": "content.images.count",
+            "value": 10
+          }
+        },
+        {
+          "id": "content_video_none",
+          "priority": 80,
+          "conditions": { "content.video": {"$equals": "none"} },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from video content",
+            "value": 0
+          }
+        },
+        {
+          "id": "content_video_embed_only",
+          "priority": 90,
+          "conditions": { "content.video": {"$equals": "embed"} },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from video content",
+            "value": 100
+          }
+        },
+        {
+          "id": "content_video_editing",
+          "priority": 100,
+          "conditions": { "content.video": {"$equals": "editing"} },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from video content",
+            "value": 500
+          }
+        },
+        {
+          "id": "content_localization",
+          "priority": 110,
+          "conditions": { "content.localization.count": {"$greater-than": 1} },
+          "action": "multiply_path",
+          "metadata": {
+            "description": "Calculate base price from content localization",
+            "path": "content.localization.base_price",
+            "value": 1.6
+          }
+        },
+        {
+          "id": "content_copyright_client_has",
+          "priority": 120,
+          "conditions": { "content.copyright": {"$equals": "client_has"} },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from content copyright",
+            "value": 1.0
+          }
+        },
+        {
+          "id": "content_copyright_need_license",
+          "priority": 120,
+          "conditions": { "content.copyright": {"$equals": "need_licence"} },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from content copyright",
+            "value": 1.2
+          }
+        },
+        {
+          "id": "content_copyright_exclusive_creation",
+          "priority": 130,
+          "conditions": {
+            "content.copyright": {"$equals": "exclusive_creation"}
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from content copyright",
+            "value": 1.5
+          }
+        },
+        {
+          "id": "content_premium_fonts_1",
+          "priority": 140,
+          "conditions": { "content.premium_fonts.count": {"$equals": 1} },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from content premium fonts count",
+            "value": 50
+          }
+        },
+        {
+          "id": "content_premium_fonts_2",
+          "priority": 150,
+          "conditions": { "content.premium_fonts.count": {"$equals": 2} },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from content premium fonts count",
+            "value": 75
+          }
+        },
+        {
+          "id": "content_premium_fonts_3",
+          "priority": 160,
+          "conditions": { "content.premium_fonts.count": {"$equals": 3} },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from content premium fonts count",
+            "value": 100
+          }
+        }
+      ]
+    }
+  }
+}
+

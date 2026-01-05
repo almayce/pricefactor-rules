@@ -1,0 +1,225 @@
+{
+  "categories": {
+    "technical_requirements": {
+      "stop_on_first": false,
+      "rules": [
+        {
+          "id": "technical_requirements_adaptability_true",
+          "priority": 10,
+          "conditions": {
+            "technical_requirements.adaptability": {"$equals": true}
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from technical requirements adaptability",
+            "value": 200
+          }
+        },
+        {
+          "id": "technical_requirements_adaptability_false",
+          "priority": 20,
+          "conditions": {
+            "technical_requirements.adaptability": {"$equals": false}
+          },
+          "action": "subtract",
+          "metadata": {
+            "description": "Calculate base price from technical requirements adaptability",
+            "value": 150
+          }
+        },
+        {
+          "id": "technical_requirements_animation_level_none",
+          "priority": 30,
+          "conditions": {
+            "technical_requirements.animation_level": {"$equals": "none"}
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from technical requirements animation level",
+            "value": 1.0
+          }
+        },
+        {
+          "id": "technical_requirements_animation_level_simple_hover",
+          "priority": 40,
+          "conditions": {
+            "technical_requirements.animation_level": {
+              "$equals": "simple_hover"
+            }
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from technical requirements animation level",
+            "value": 1.2
+          }
+        },
+        {
+          "id": "technical_requirements_animation_level_moderate",
+          "priority": 50,
+          "conditions": {
+            "technical_requirements.animation_level": {"$equals": "moderate"}
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from technical requirements animation level",
+            "value": 1.5
+          }
+        },
+        {
+          "id": "technical_requirements_animation_level_complex_interactive",
+          "priority": 60,
+          "conditions": {
+            "technical_requirements.animation_level": {
+              "$equals": "complex_interactive"
+            }
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from technical requirements animation level",
+            "value": 2.2
+          }
+        },
+        {
+          "id": "technical_requirements_animation_level_complex_interactive_browser_support_legacy_included",
+          "priority": 70,
+          "conditions": {
+            "$and": [
+              {
+                "technical_requirements.animation_level": {
+                  "$equals": "complex_interactive"
+                }
+              },
+              {
+                "technical_requirements.browser_support": {
+                  "$equals": "legacy_included"
+                }
+              }
+            ]
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from technical requirements animation level",
+            "value": 2.8
+          }
+        },
+        {
+          "id": "technical_requirements_browser_support_modern_only",
+          "priority": 80,
+          "conditions": {
+            "technical_requirements.browser_support": {"$equals": "modern_only"}
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from technical requirements browser support",
+            "value": 1.0
+          }
+        },
+        {
+          "id": "technical_requirements_browser_support_standart",
+          "priority": 90,
+          "conditions": {
+            "technical_requirements.browser_support": {"$equals": "standart"}
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from technical requirements browser support",
+            "value": 1.1
+          }
+        },
+        {
+          "id": "technical_requirements_browser_support_legacy_included",
+          "priority": 100,
+          "conditions": {
+            "technical_requirements.browser_support": {
+              "$equals": "legacy_included"
+            }
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from technical requirements browser support",
+            "value": 1.4
+          }
+        },
+        {
+          "id": "technical_requirements_cross_platform_web_only",
+          "priority": 110,
+          "conditions": {
+            "technical_requirements.cross_platform": {"$equals": "web_only"}
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from technical requirements cross platform",
+            "value": 1.0
+          }
+        },
+        {
+          "id": "technical_requirements_cross_platform_pwa",
+          "priority": 120,
+          "conditions": {
+            "technical_requirements.cross_platform": {"$equals": "pwa"}
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from technical requirements cross platform",
+            "value": 1.4
+          }
+        },
+        {
+          "id": "technical_requirements_performance_optimization_basic",
+          "priority": 130,
+          "conditions": {
+            "technical_requirements.performance_optimization": {
+              "$equals": "basic"
+            }
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from technical requirements performance optimization",
+            "value": 1.0
+          }
+        },
+        {
+          "id": "technical_requirements_performance_optimization_standart",
+          "priority": 140,
+          "conditions": {
+            "technical_requirements.performance_optimization": {
+              "$equals": "standart"
+            }
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from technical requirements performance optimization",
+            "value": 1.15
+          }
+        },
+        {
+          "id": "technical_requirements_performance_optimization_aggressive",
+          "priority": 150,
+          "conditions": {
+            "technical_requirements.performance_optimization": {
+              "$equals": "aggressive"
+            }
+          },
+          "action": "multiply",
+          "metadata": {
+            "description": "Calculate base price from technical requirements performance optimization",
+            "value": 1.4
+          }
+        },
+        {
+          "id": "technical_requirements_offline_functionality",
+          "priority": 160,
+          "conditions": {
+            "technical_requirements.offline_functionality": {"$equals": true}
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Calculate base price from technical requirements offline functionality",
+            "value": 600
+          }
+        }
+      ]
+    }
+  }
+}
+
