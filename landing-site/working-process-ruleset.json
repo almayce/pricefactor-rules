@@ -349,6 +349,72 @@
             "description": "Enterprise legal contracts involve procurement teams, legal departments, compliance reviews, and extended negotiation processes",
             "value": 0
           }
+        },
+        {
+          "id": "working_process_rush_quality_warning",
+          "priority": 191,
+          "conditions": {
+            "working_process.eta": {
+              "$less-than": 7
+            }
+          },
+          "action": "warning",
+          "metadata": {
+            "description": "Rush delivery may impact code quality, testing coverage, and require cutting corners on best practices"
+          }
+        },
+        {
+          "id": "working_process_low_fixes_complex_project",
+          "priority": 192,
+          "conditions": {
+            "$and": [
+              {
+                "working_process.fixes_count": {
+                  "$less-than": 3
+                }
+              },
+              {
+                "$or": [
+                  {
+                    "base_parameters.source_of_design": {
+                      "$equals": "full_custom"
+                    }
+                  },
+                  {
+                    "base_parameters.section_count": {
+                      "$greater-than": 10
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "action": "warning",
+          "metadata": {
+            "description": "Complex projects typically require more revision rounds to achieve optimal results"
+          }
+        },
+        {
+          "id": "working_process_nda_with_sources",
+          "priority": 193,
+          "conditions": {
+            "$and": [
+              {
+                "working_process.provide_sources": {
+                  "$equals": true
+                }
+              },
+              {
+                "working_process.nda": {
+                  "$equals": false
+                }
+              }
+            ]
+          },
+          "action": "warning",
+          "metadata": {
+            "description": "Consider adding NDA when providing source code to protect intellectual property"
+          }
         }
       ]
     }

@@ -278,6 +278,53 @@
           "metadata": {
             "description": "Security improvements are necessary when implementing databases with sensitive data"
           }
+        },
+        {
+          "id": "functionality_payment_integration_security_warning",
+          "priority": 221,
+          "conditions": {
+            "functionality.payment_integration": {"$equals": true}
+          },
+          "action": "warning",
+          "metadata": {
+            "description": "Payment integration requires PCI DSS compliance, secure data handling, and SSL/TLS encryption"
+          }
+        },
+        {
+          "id": "functionality_user_auth_security_best_practices",
+          "priority": 222,
+          "conditions": {
+            "functionality.user_auth": {"$equals": true}
+          },
+          "action": "warning",
+          "metadata": {
+            "description": "User authentication requires HTTPS, secure password storage, session management, and protection against common vulnerabilities"
+          }
+        },
+        {
+          "id": "functionality_payment_with_user_data",
+          "priority": 223,
+          "conditions": {
+            "$and": [
+              { "functionality.payment_integration": {"$equals": true} },
+              { "functionality.user_auth": {"$equals": true} }
+            ]
+          },
+          "action": "warning",
+          "metadata": {
+            "description": "Combining payment and user authentication requires enhanced security measures including data encryption at rest and in transit"
+          }
+        },
+        {
+          "id": "functionality_crm_data_privacy",
+          "priority": 224,
+          "conditions": {
+            "functionality.crm_integration": {"$equals": true}
+          },
+          "action": "warning",
+          "metadata": {
+            "description": "CRM integration requires compliance with data privacy regulations (GDPR, CCPA) and secure API key management"
+          }
         }
       ]
     }

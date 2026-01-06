@@ -217,6 +217,53 @@
             "description": "Offline capabilities require service worker architecture, cache management strategies, data synchronization logic, and extensive offline scenario testing",
             "value": 600
           }
+        },
+        {
+          "id": "technical_requirements_legacy_browser_warning",
+          "priority": 161,
+          "conditions": {
+            "$and": [
+              {
+                "technical_requirements.browser_support": {
+                  "$equals": "legacy_included"
+                }
+              },
+              {
+                "technical_requirements.animation_level": {
+                  "$equals": "complex_interactive"
+                }
+              }
+            ]
+          },
+          "action": "warning",
+          "metadata": {
+            "description": "Complex animations on legacy browsers may result in performance issues and require extensive polyfills and fallbacks"
+          }
+        },
+        {
+          "id": "technical_requirements_pwa_requirements",
+          "priority": 162,
+          "conditions": {
+            "technical_requirements.cross_platform": {"$equals": "pwa"}
+          },
+          "action": "warning",
+          "metadata": {
+            "description": "PWA implementation requires HTTPS, valid SSL certificate, service worker registration, and web app manifest configuration"
+          }
+        },
+        {
+          "id": "technical_requirements_offline_data_sync",
+          "priority": 163,
+          "conditions": {
+            "$and": [
+              { "technical_requirements.offline_functionality": {"$equals": true} },
+              { "functionality.database_integration": {"$equals": true} }
+            ]
+          },
+          "action": "warning",
+          "metadata": {
+            "description": "Offline functionality with database requires conflict resolution strategy and data synchronization mechanisms"
+          }
         }
       ]
     }
