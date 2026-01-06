@@ -4,8 +4,18 @@
       "stop_on_first": false,
       "rules": [
         {
-          "id": "functionality_form_basic_contact",
+          "id": "functionality_form_none",
           "priority": 10,
+          "conditions": { "functionality.form": {"$equals": "none"} },
+          "action": "add",
+          "metadata": {
+            "description": "Contact form no need",
+            "value": 0
+          }
+        },
+        {
+          "id": "functionality_form_basic_contact",
+          "priority": 11,
           "conditions": { "functionality.form": {"$equals": "basic_contact"} },
           "action": "add",
           "metadata": {
@@ -56,8 +66,20 @@
           }
         },
         {
-          "id": "functionality_analytics_maintenance_basic_ga",
+          "id": "functionality_analytics_maintenance_none",
           "priority": 60,
+          "conditions": {
+            "functionality.analytics_maintenance": {"$equals": "none"}
+          },
+          "action": "add",
+          "metadata": {
+            "description": "Analytics setup no need",
+            "value": 0
+          }
+        },
+        {
+          "id": "functionality_analytics_maintenance_basic_ga",
+          "priority": 61,
           "conditions": {
             "functionality.analytics_maintenance": {"$equals": "basic_ga"}
           },
