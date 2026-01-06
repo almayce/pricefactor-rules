@@ -9,8 +9,8 @@
           "conditions": { "support.postproduction": {"$equals": true} },
           "action": "multiply_path",
           "metadata": {
-            "description": "Calculate base price from support postproduction",
-            "path": "support.postproduction.months_count",
+            "description": "Post-launch support includes bug fixes, minor adjustments, content updates, and technical assistance during the stabilization period",
+            "path": "support.postproduction_months.count",
             "value": 150
           }
         },
@@ -22,44 +22,32 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from support postproduction",
+            "description": "Long-term post-production commitment allows for volume pricing efficiency",
             "value": 0.8
           }
         },
         {
-          "id": "support_bug_fixes_days",
+          "id": "support_bug_fixes_months",
           "priority": 30,
           "conditions": {
             "support.bug_fixes_months.count": {"$greater-than-or-equals": 1}
           },
           "action": "multiply_path",
           "metadata": {
-            "description": "Calculate base price from support bug fixes",
+            "description": "Extended bug fix warranty provides ongoing stability maintenance and issue resolution beyond standard delivery",
             "path": "support.bug_fixes_months.count",
             "value": 100
           }
         },
         {
-          "id": "support_bug_fixes_days_subtract_first_month",
+          "id": "support_bug_fixes_first_month_included",
           "priority": 40,
           "conditions": {
-            "support.bug_fixes_days.count": {"$greater-than-or-equals": 1}
+            "support.bug_fixes_months.count": {"$greater-than-or-equals": 1}
           },
           "action": "subtract",
           "metadata": {
-            "description": "Calculate base price from support bug fixes",
-            "value": 100
-          }
-        },
-        {
-          "id": "support_bug_fixes_days_subtract_first_month",
-          "priority": 50,
-          "conditions": {
-            "support.bug_fixes_days.count": {"$greater-than-or-equals": 1}
-          },
-          "action": "subtract",
-          "metadata": {
-            "description": "Calculate base price from support bug fixes",
+            "description": "First month of bug fixes included in base project cost",
             "value": 100
           }
         },
@@ -71,19 +59,7 @@
           },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from support training demonstration",
-            "value": 300
-          }
-        },
-        {
-          "id": "support_training_demonstration",
-          "priority": 70,
-          "conditions": {
-            "support.training_demonstration": {"$equals": true}
-          },
-          "action": "add",
-          "metadata": {
-            "description": "Calculate base price from support training demonstration",
+            "description": "Training session includes comprehensive walkthrough, documentation review, content management instruction, and Q&A support",
             "value": 300
           }
         },
@@ -93,8 +69,8 @@
           "conditions": { "support.hosting_management": {"$equals": true} },
           "action": "multiply_path",
           "metadata": {
-            "description": "Calculate base price from support hosting management",
-            "path": "support.hosting_management.months_count",
+            "description": "Hosting management covers server monitoring, uptime maintenance, security patches, performance optimization, and technical troubleshooting",
+            "path": "support.hosting_management_months.count",
             "value": 50
           }
         },
@@ -104,8 +80,8 @@
           "conditions": { "support.domain_management": {"$equals": true} },
           "action": "multiply_path",
           "metadata": {
-            "description": "Calculate base price from support domain management",
-            "path": "support.domain_management.months_count",
+            "description": "Domain management includes DNS configuration, domain renewal tracking, nameserver updates, and subdomain setup",
+            "path": "support.domain_management_months.count",
             "value": 20
           }
         },
@@ -120,7 +96,7 @@
           },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from support ssl certificate",
+            "description": "SSL certificate setup involves certificate acquisition, installation, auto-renewal configuration, and HTTPS enforcement implementation",
             "value": 100
           }
         },
@@ -129,13 +105,13 @@
           "priority": 110,
           "conditions": {
             "$and": [
-              { "support.hosting_management": {"$equals": true} },
-              { "support.ssl_certificate": {"$equals": true} }
+              { "support.domain_management": {"$equals": true} },
+              { "support.email_setup_custom_domain": {"$equals": true} }
             ]
           },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from support email setup custom domain",
+            "description": "Custom domain email configuration requires MX record setup, email service integration, inbox configuration, and delivery testing",
             "value": 200
           }
         },
@@ -150,24 +126,24 @@
           },
           "action": "multiply_path",
           "metadata": {
-            "description": "Calculate base price from support monitoring uptime",
-            "path": "support.monitoring_uptime.months_count",
+            "description": "Uptime monitoring includes availability checks, downtime alerts, performance tracking, and incident response coordination",
+            "path": "support.monitoring_uptime_months.count",
             "value": 80
           }
         },
         {
           "id": "support_backup_automation",
           "priority": 130,
-          "conditions": { "support.backup_automation": {"$equals": false} },
+          "conditions": { "support.backup_automation": {"$equals": true} },
           "action": "multiply_path",
           "metadata": {
-            "description": "Calculate base price from support backup automation",
-            "path": "support.backup_automation.months_count",
+            "description": "Automated backup system involves scheduled backup configuration, secure storage setup, restoration testing, and recovery procedures documentation",
+            "path": "support.backup_automation_months.count",
             "value": 50
           }
         },
         {
-          "id": "support_backup_automation",
+          "id": "support_backup_automation_with_database",
           "priority": 140,
           "conditions": {
             "$and": [
@@ -177,11 +153,10 @@
           },
           "action": "warning",
           "metadata": {
-            "description": "Backup automation should be implemented for database integration"
+            "description": "Backup automation should be implemented for database integration to prevent data loss"
           }
         }
       ]
     }
   }
 }
-

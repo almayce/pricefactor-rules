@@ -11,7 +11,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from company size",
+            "description": "Solo entrepreneur or freelancer typically has simpler requirements and straightforward decision-making process",
             "value": 1.0
           }
         },
@@ -30,7 +30,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from company size",
+            "description": "Small team requires additional stakeholder coordination and slightly more complex approval processes",
             "value": 1.1
           }
         },
@@ -49,7 +49,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from company size",
+            "description": "Small-to-medium business involves multiple departments, more stakeholders, and increased communication overhead requiring structured project management",
             "value": 1.3
           }
         },
@@ -68,7 +68,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from company size",
+            "description": "Mid-market companies demand formal processes, comprehensive documentation, and multi-level approval workflows",
             "value": 1.5
           }
         },
@@ -82,7 +82,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from company size",
+            "description": "Enterprise organizations require extensive compliance procedures, legal reviews, multiple stakeholder alignment, and sophisticated project governance",
             "value": 2.0
           }
         },
@@ -98,7 +98,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from industry type",
+            "description": "General industry with standard requirements and no specialized compliance or domain expertise needed",
             "value": 1.0
           }
         },
@@ -112,7 +112,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from industry type",
+            "description": "Technology sector expects cutting-edge solutions, modern UI/UX patterns, and advanced technical implementations",
             "value": 1.1
           }
         },
@@ -128,7 +128,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from industry type",
+            "description": "Financial industry demands strict security standards, regulatory compliance, data protection measures, and audit-ready documentation",
             "value": 1.4
           }
         },
@@ -144,9 +144,9 @@
               }
             ]
           },
-          "action": "healthcare",
+          "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from industry type",
+            "description": "Healthcare sector requires HIPAA compliance, patient data protection, accessibility standards, and specialized security protocols",
             "value": 1.5
           }
         },
@@ -164,7 +164,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from industry type",
+            "description": "E-commerce projects need payment gateway integration considerations, product catalog structures, and conversion optimization features",
             "value": 1.2
           }
         },
@@ -178,7 +178,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from industry type",
+            "description": "Legal industry requires rigorous confidentiality measures, professional credibility standards, and careful content handling procedures",
             "value": 1.4
           }
         },
@@ -196,7 +196,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from industry type",
+            "description": "Government projects involve extensive bureaucratic processes, accessibility mandates, security clearances, and comprehensive compliance requirements",
             "value": 1.6
           }
         },
@@ -210,7 +210,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from business type",
+            "description": "Business-to-consumer model focuses on user experience, simplified messaging, and consumer-friendly interfaces",
             "value": 1.0
           }
         },
@@ -224,7 +224,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from business type",
+            "description": "Business-to-business requires professional positioning, detailed product information, lead generation capabilities, and enterprise credibility",
             "value": 1.15
           }
         },
@@ -238,7 +238,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from business type",
+            "description": "Business-to-government demands strict compliance with public sector standards, accessibility requirements, and formal procurement specifications",
             "value": 1.3
           }
         },
@@ -256,7 +256,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from reputation risk",
+            "description": "Low reputational risk allows standard development practices without extra precautions or specialized risk management",
             "value": 1.0
           }
         },
@@ -274,7 +274,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from reputation risk",
+            "description": "Medium reputational risk requires careful content review, quality assurance measures, and brand protection considerations",
             "value": 1.1
           }
         },
@@ -292,7 +292,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from reputation risk",
+            "description": "High reputational risk necessitates extensive legal review, crisis management planning, rigorous QA processes, and enhanced security measures",
             "value": 1.3
           }
         }
@@ -300,4 +300,3 @@
     }
   }
 }
-

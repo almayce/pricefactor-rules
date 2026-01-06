@@ -13,7 +13,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from eta",
+            "description": "Accelerated timeline requires prioritization of your project, potential overtime work, and compressed development cycles",
             "value": 1.5
           }
         },
@@ -27,7 +27,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from eta",
+            "description": "Rush delivery demands immediate resource allocation, round-the-clock development, and significant schedule disruption",
             "value": 2
           }
         },
@@ -59,12 +59,12 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from eta and customization level",
+            "description": "Combining rush delivery with custom design is extremely challenging, requiring parallel design-development workflows and intensive designer availability",
             "value": 2.5
           }
         },
         {
-          "id": "working_process_fixes_count",
+          "id": "working_process_fixes_count_low",
           "priority": 40,
           "conditions": {
             "working_process.fixes_count": {
@@ -73,26 +73,35 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from fixes count (risk and time)",
+            "description": "Limited revision rounds require precise initial delivery and minimal iteration, reducing overall project flexibility",
             "value": 1
           }
         },
         {
-          "id": "working_process_fixes_count",
+          "id": "working_process_fixes_count_medium",
           "priority": 50,
           "conditions": {
-            "working_process.fixes_count": {
-              "$less-than": 6
-            }
+            "$and": [
+              {
+                "working_process.fixes_count": {
+                  "$greater-than-or-equals": 4
+                }
+              },
+              {
+                "working_process.fixes_count": {
+                  "$less-than": 6
+                }
+              }
+            ]
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from fixes count (risk and time)",
+            "description": "Moderate revision allowance provides reasonable iteration flexibility while maintaining project timeline control",
             "value": 1.15
           }
         },
         {
-          "id": "working_process_fixes_count",
+          "id": "working_process_fixes_count_high",
           "priority": 60,
           "conditions": {
             "working_process.fixes_count": {
@@ -101,12 +110,12 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from fixes count (risk and time)",
+            "description": "Extended revision cycles indicate complex requirements, potential scope creep, and significantly increased project management overhead",
             "value": 1.4
           }
         },
         {
-          "id": "working_process_fixes_count",
+          "id": "working_process_fixes_count_enterprise",
           "priority": 70,
           "conditions": {
             "$and": [
@@ -124,7 +133,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from fixes count (risk and time)",
+            "description": "Enterprise-scale projects with multiple revision rounds involve numerous stakeholders, lengthy approval processes, and substantial coordination effort",
             "value": 2.5
           }
         },
@@ -138,7 +147,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from communication format",
+            "description": "Asynchronous communication provides efficient workflow with minimal interruptions, suitable for independent decision-makers",
             "value": 1
           }
         },
@@ -152,7 +161,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from communication format",
+            "description": "Regular meeting schedule requires dedicated time allocation, meeting preparation, and follow-up documentation",
             "value": 1.15
           }
         },
@@ -166,7 +175,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from communication format",
+            "description": "On-site presence demands travel time, accommodation arrangements, and significant schedule inflexibility",
             "value": 1.4
           }
         },
@@ -189,7 +198,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from communication format",
+            "description": "Accelerated on-site work combines travel logistics with compressed timeline, creating substantial logistical challenges",
             "value": 1.8
           }
         },
@@ -212,7 +221,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from communication format",
+            "description": "Immediate on-site deployment with rush timeline requires emergency travel arrangements and intensive focused work periods",
             "value": 3.6
           }
         },
@@ -226,7 +235,7 @@
           },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from provide sources",
+            "description": "Source code delivery requires proper code organization, documentation, cleanup, and handover preparation",
             "value": 300
           }
         },
@@ -258,7 +267,7 @@
           },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from provide sources with customization",
+            "description": "Custom project source delivery demands extensive documentation, component explanations, and comprehensive architectural notes",
             "value": 500
           }
         },
@@ -272,7 +281,7 @@
           },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from nda",
+            "description": "Non-disclosure agreement involves legal review, confidentiality procedures, and secure communication protocols",
             "value": 100
           }
         },
@@ -286,7 +295,7 @@
           },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from contract type",
+            "description": "Basic contract with standard terms requires minimal legal overhead",
             "value": 0
           }
         },
@@ -300,13 +309,13 @@
           },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from contract type",
+            "description": "Standard contract includes detailed terms, deliverables specification, and formal project milestones requiring legal preparation",
             "value": 150
           }
         },
         {
           "id": "working_process_contract_type_legal",
-          "priority": 170,
+          "priority": 180,
           "conditions": {
             "working_process.contract": {
               "$equals": "legal"
@@ -314,13 +323,13 @@
           },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from contract type",
+            "description": "Comprehensive legal contract demands attorney review, negotiation cycles, custom clause development, and extensive documentation",
             "value": 500
           }
         },
         {
           "id": "working_process_contract_type_legal_enterprise",
-          "priority": 180,
+          "priority": 190,
           "conditions": {
             "$and": [
               {
@@ -337,7 +346,7 @@
           },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from contract type",
+            "description": "Enterprise legal contracts involve procurement teams, legal departments, compliance reviews, and extended negotiation processes",
             "value": 0
           }
         }

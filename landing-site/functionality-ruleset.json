@@ -9,7 +9,7 @@
           "conditions": { "functionality.form": {"$equals": "basic_contact"} },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from functionality form",
+            "description": "Basic contact form includes simple validation, spam protection, and email delivery configuration",
             "value": 150
           }
         },
@@ -19,7 +19,7 @@
           "conditions": { "functionality.form": {"$equals": "extended"} },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from functionality form",
+            "description": "Extended form incorporates multiple field types, conditional logic, file uploads, and advanced validation rules",
             "value": 350
           }
         },
@@ -29,7 +29,7 @@
           "conditions": { "functionality.form": {"$equals": "multi_step"} },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from functionality form",
+            "description": "Multi-step form requires progress tracking, data persistence between steps, validation at each stage, and complex user flow management",
             "value": 700
           }
         },
@@ -41,7 +41,7 @@
           },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from functionality email integration",
+            "description": "Email service integration involves API configuration, template design, delivery tracking, and bounce handling setup",
             "value": 250
           }
         },
@@ -51,7 +51,7 @@
           "conditions": { "functionality.crm_integration": {"$equals": true} },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from functionality CRM integration",
+            "description": "CRM integration requires API authentication, data mapping, webhook configuration, lead routing logic, and ongoing synchronization maintenance",
             "value": 600
           }
         },
@@ -63,7 +63,7 @@
           },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from functionality analytics maintenance",
+            "description": "Basic analytics setup includes standard tracking code implementation and essential event configuration",
             "value": 100
           }
         },
@@ -75,7 +75,7 @@
           },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from functionality analytics maintenance",
+            "description": "Extended analytics tracking requires custom event implementation, enhanced e-commerce tracking, user flow analysis, and detailed reporting configuration",
             "value": 300
           }
         },
@@ -87,7 +87,7 @@
           },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from functionality analytics maintenance",
+            "description": "Goal-based analytics demands conversion funnel setup, A/B testing configuration, advanced segmentation, custom dashboards, and ongoing optimization support",
             "value": 600
           }
         },
@@ -99,7 +99,7 @@
           },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from functionality chat support widget",
+            "description": "Live chat widget integration includes platform selection, customization, notification setup, and mobile optimization",
             "value": 150
           }
         },
@@ -111,19 +111,7 @@
           },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from functionality payment_integration",
-            "value": 800
-          }
-        },
-        {
-          "id": "functionality_payment_integration",
-          "priority": 110,
-          "conditions": {
-            "functionality.payment_integration": {"$equals": true}
-          },
-          "action": "add",
-          "metadata": {
-            "description": "Calculate base price from functionality payment_integration",
+            "description": "Payment gateway integration demands PCI compliance considerations, secure API implementation, error handling, webhook management, and extensive transaction testing",
             "value": 800
           }
         },
@@ -133,7 +121,7 @@
           "conditions": { "functionality.geolocation": {"$equals": true} },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from functionality geolocation",
+            "description": "Geolocation features require browser API integration, permission handling, map service configuration, and location-based content delivery logic",
             "value": 400
           }
         },
@@ -148,7 +136,7 @@
           },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from functionality geolocation with localization",
+            "description": "Combining geolocation with multi-language support adds automatic language detection, regional content switching, and timezone handling complexity",
             "value": 300
           }
         },
@@ -160,7 +148,7 @@
           },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from functionality social medial integration",
+            "description": "No social media integration simplifies development without third-party API dependencies",
             "value": 0
           }
         },
@@ -174,7 +162,7 @@
           },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from functionality social medial integration",
+            "description": "Basic social sharing buttons require share link configuration, metadata tags for previews, and mobile-friendly implementation",
             "value": 100
           }
         },
@@ -188,7 +176,7 @@
           },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from functionality social media integration",
+            "description": "Social feed integration involves API authentication, feed parsing, content caching, rate limit management, and responsive display formatting",
             "value": 400
           }
         },
@@ -202,7 +190,7 @@
           },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from functionality social media integration",
+            "description": "Advanced social API integration requires OAuth implementation, posting capabilities, analytics integration, webhook handling, and complex permissions management",
             "value": 800
           }
         },
@@ -214,7 +202,7 @@
           },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from functionality calendar booking system",
+            "description": "Calendar booking system demands availability management, time slot logic, timezone handling, email confirmations, reminder scheduling, and cancellation workflows",
             "value": 1000
           }
         },
@@ -229,7 +217,7 @@
           },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from functionality calendar booking system with payment integration (appointment scheduling)",
+            "description": "Booking with payment processing adds deposit handling, refund logic, payment status synchronization, and failed transaction recovery mechanisms",
             "value": 500
           }
         },
@@ -239,7 +227,7 @@
           "conditions": { "functionality.user_auth": {"$equals": true} },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from functionality user auth (login/register)",
+            "description": "User authentication system requires secure password handling, session management, registration flows, password recovery, email verification, and security best practices implementation",
             "value": 800
           }
         },
@@ -251,7 +239,7 @@
           },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from functionality database integration",
+            "description": "Database integration involves schema design, API endpoint development, data validation, query optimization, backup strategies, and migration management",
             "value": 1200
           }
         },
@@ -273,4 +261,3 @@
     }
   }
 }
-

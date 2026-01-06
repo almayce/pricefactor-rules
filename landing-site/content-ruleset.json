@@ -9,7 +9,7 @@
           "conditions": { "content.source": {"$equals": "provided"} },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from text content source",
+            "description": "Client-provided text content allows immediate development without copywriting delays or content creation overhead",
             "value": 1.0
           }
         },
@@ -19,7 +19,7 @@
           "conditions": { "content.source": {"$equals": "copywriting"} },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from text content source",
+            "description": "Professional copywriting requires content strategy development, SEO optimization, brand voice alignment, and multiple revision cycles",
             "value": 1.2
           }
         },
@@ -27,11 +27,11 @@
           "id": "content_text_source_full_development",
           "priority": 30,
           "conditions": {
-            "content.text.source": {"$equals": "full_development"}
+            "content.source": {"$equals": "full_development"}
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from text content source",
+            "description": "Complete content development from scratch demands extensive research, content architecture planning, SEO strategy, and comprehensive copywriting services",
             "value": 1.6
           }
         },
@@ -41,7 +41,7 @@
           "conditions": { "content.images.source": {"$equals": "provided"} },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from images content source",
+            "description": "Client-provided images reduce costs by eliminating sourcing and licensing efforts, though may require optimization and processing",
             "value": 1.0
           }
         },
@@ -51,7 +51,7 @@
           "conditions": { "content.images.source": {"$equals": "stocks"} },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from images content source",
+            "description": "Stock image selection involves careful curation, licensing management, brand alignment evaluation, and professional editing",
             "value": 1.2
           }
         },
@@ -61,7 +61,7 @@
           "conditions": { "content.images.source": {"$equals": "custom"} },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from images content source",
+            "description": "Custom photography or illustration requires professional contractor coordination, art direction, multiple review rounds, and post-production work",
             "value": 1.6
           }
         },
@@ -73,7 +73,7 @@
           },
           "action": "multiply_path",
           "metadata": {
-            "description": "Calculate base price from images content count",
+            "description": "Large image volumes increase processing time for optimization, format conversion, responsive sizing, and quality assurance",
             "path": "content.images.count",
             "value": 10
           }
@@ -84,7 +84,7 @@
           "conditions": { "content.video": {"$equals": "none"} },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from video content",
+            "description": "No video content requirements simplify development with standard static content integration",
             "value": 0
           }
         },
@@ -94,7 +94,7 @@
           "conditions": { "content.video": {"$equals": "embed"} },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from video content",
+            "description": "Embedded video integration requires player configuration, responsive sizing, performance optimization, and fallback handling",
             "value": 100
           }
         },
@@ -104,7 +104,7 @@
           "conditions": { "content.video": {"$equals": "editing"} },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from video content",
+            "description": "Video editing services involve professional editing software, rendering time, format optimization, compression, and multiple export versions",
             "value": 500
           }
         },
@@ -114,7 +114,7 @@
           "conditions": { "content.localization.count": {"$greater-than": 1} },
           "action": "multiply_path",
           "metadata": {
-            "description": "Calculate base price from content localization",
+            "description": "Multi-language support requires translation coordination, cultural adaptation, layout adjustments for text expansion, and extensive cross-language testing",
             "path": "content.localization.base_price",
             "value": 1.6
           }
@@ -125,59 +125,59 @@
           "conditions": { "content.copyright": {"$equals": "client_has"} },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from content copyright",
+            "description": "Existing copyright ownership eliminates licensing complexities and legal review requirements",
             "value": 1.0
           }
         },
         {
           "id": "content_copyright_need_license",
-          "priority": 120,
+          "priority": 130,
           "conditions": { "content.copyright": {"$equals": "need_licence"} },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from content copyright",
+            "description": "License acquisition involves vendor research, usage rights verification, contract review, and ongoing license management",
             "value": 1.2
           }
         },
         {
           "id": "content_copyright_exclusive_creation",
-          "priority": 130,
+          "priority": 140,
           "conditions": {
             "content.copyright": {"$equals": "exclusive_creation"}
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from content copyright",
+            "description": "Exclusive content creation demands original asset development, comprehensive rights transfer, legal documentation, and intellectual property agreements",
             "value": 1.5
           }
         },
         {
           "id": "content_premium_fonts_1",
-          "priority": 140,
+          "priority": 150,
           "conditions": { "content.premium_fonts.count": {"$equals": 1} },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from content premium fonts count",
+            "description": "Single premium font requires licensing costs, web font optimization, and cross-browser compatibility testing",
             "value": 50
           }
         },
         {
           "id": "content_premium_fonts_2",
-          "priority": 150,
+          "priority": 160,
           "conditions": { "content.premium_fonts.count": {"$equals": 2} },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from content premium fonts count",
+            "description": "Multiple premium fonts increase licensing expenses, page weight considerations, and typography system complexity",
             "value": 75
           }
         },
         {
           "id": "content_premium_fonts_3",
-          "priority": 160,
+          "priority": 170,
           "conditions": { "content.premium_fonts.count": {"$equals": 3} },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from content premium fonts count",
+            "description": "Extensive premium font collection significantly impacts licensing costs, loading performance, and requires advanced font loading strategies",
             "value": 100
           }
         }
@@ -185,4 +185,3 @@
     }
   }
 }
-

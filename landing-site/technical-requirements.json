@@ -11,7 +11,7 @@
           },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from technical requirements adaptability",
+            "description": "Responsive design for all device sizes requires extensive cross-device testing, flexible layouts, adaptive images, and comprehensive breakpoint management",
             "value": 200
           }
         },
@@ -23,7 +23,7 @@
           },
           "action": "subtract",
           "metadata": {
-            "description": "Calculate base price from technical requirements adaptability",
+            "description": "Desktop-only design simplifies development by eliminating mobile considerations and responsive layout complexity",
             "value": 150
           }
         },
@@ -35,7 +35,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from technical requirements animation level",
+            "description": "Static interface without animations provides straightforward development with minimal interaction complexity",
             "value": 1.0
           }
         },
@@ -49,7 +49,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from technical requirements animation level",
+            "description": "Basic hover effects and simple transitions require CSS animation development, timing adjustments, and interaction refinement",
             "value": 1.2
           }
         },
@@ -61,7 +61,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from technical requirements animation level",
+            "description": "Moderate animation complexity involves scroll-triggered effects, multi-step animations, performance optimization, and smooth interaction choreography",
             "value": 1.5
           }
         },
@@ -75,7 +75,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from technical requirements animation level",
+            "description": "Advanced interactive animations demand sophisticated JavaScript libraries, physics-based motion, gesture handling, and extensive performance tuning",
             "value": 2.2
           }
         },
@@ -98,7 +98,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from technical requirements animation level",
+            "description": "Complex animations with legacy browser support require polyfills, fallback implementations, progressive enhancement strategies, and extensive cross-browser debugging",
             "value": 2.8
           }
         },
@@ -110,7 +110,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from technical requirements browser support",
+            "description": "Modern browsers only allow use of latest web standards, reducing testing complexity and eliminating legacy compatibility concerns",
             "value": 1.0
           }
         },
@@ -122,7 +122,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from technical requirements browser support",
+            "description": "Standard browser support includes recent versions, requiring modest backward compatibility testing and occasional polyfill implementation",
             "value": 1.1
           }
         },
@@ -136,7 +136,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from technical requirements browser support",
+            "description": "Legacy browser support demands extensive polyfills, code transpilation, graceful degradation, alternative implementations, and comprehensive cross-browser testing",
             "value": 1.4
           }
         },
@@ -148,7 +148,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from technical requirements cross platform",
+            "description": "Web-only deployment simplifies development with standard web technologies and conventional hosting requirements",
             "value": 1.0
           }
         },
@@ -160,7 +160,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from technical requirements cross platform",
+            "description": "Progressive Web App requires service worker implementation, offline functionality, app manifest configuration, installation prompts, and mobile-specific optimizations",
             "value": 1.4
           }
         },
@@ -174,7 +174,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from technical requirements performance optimization",
+            "description": "Basic optimization includes standard minification, image compression, and essential best practices without extensive performance engineering",
             "value": 1.0
           }
         },
@@ -188,7 +188,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from technical requirements performance optimization",
+            "description": "Standard performance optimization incorporates code splitting, lazy loading, caching strategies, and performance monitoring implementation",
             "value": 1.15
           }
         },
@@ -202,7 +202,7 @@
           },
           "action": "multiply",
           "metadata": {
-            "description": "Calculate base price from technical requirements performance optimization",
+            "description": "Aggressive optimization demands advanced techniques including critical CSS extraction, resource preloading, image optimization pipelines, CDN configuration, and comprehensive performance auditing",
             "value": 1.4
           }
         },
@@ -214,7 +214,7 @@
           },
           "action": "add",
           "metadata": {
-            "description": "Calculate base price from technical requirements offline functionality",
+            "description": "Offline capabilities require service worker architecture, cache management strategies, data synchronization logic, and extensive offline scenario testing",
             "value": 600
           }
         }
@@ -222,4 +222,3 @@
     }
   }
 }
-
