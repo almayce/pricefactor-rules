@@ -7,35 +7,42 @@
           "id": "technical_requirements_adaptability_true",
           "priority": 10,
           "conditions": {
-            "technical_requirements.adaptability": {"$equals": true}
+            "technical_requirements.adaptability": {
+              "$equals": true
+            }
           },
           "action": "add",
           "metadata": {
             "description": "Responsive design for all device sizes requires extensive cross-device testing, flexible layouts, adaptive images, and comprehensive breakpoint management",
-            "value": 200
+            "value": 300
           }
         },
         {
           "id": "technical_requirements_adaptability_false",
           "priority": 20,
           "conditions": {
-            "technical_requirements.adaptability": {"$equals": false}
+            "technical_requirements.adaptability": {
+              "$equals": false
+            }
           },
           "action": "subtract",
           "metadata": {
             "description": "Desktop-only design simplifies development by eliminating mobile considerations and responsive layout complexity",
-            "value": 150
+            "value": 200
           }
         },
         {
           "id": "technical_requirements_animation_level_none",
           "priority": 30,
           "conditions": {
-            "technical_requirements.animation_level": {"$equals": "none"}
+            "technical_requirements.animation_level": {
+              "$equals": "none"
+            }
           },
-          "action": "multiply",
+          "action": "multiply_path",
           "metadata": {
             "description": "Static interface without animations provides straightforward development with minimal interaction complexity",
+            "path": "_bases.technical_animation",
             "value": 1.0
           }
         },
@@ -47,22 +54,26 @@
               "$equals": "simple_hover"
             }
           },
-          "action": "multiply",
+          "action": "multiply_path",
           "metadata": {
             "description": "Basic hover effects and simple transitions require CSS animation development, timing adjustments, and interaction refinement",
-            "value": 1.2
+            "path": "_bases.technical_animation",
+            "value": 1.1
           }
         },
         {
           "id": "technical_requirements_animation_level_moderate",
           "priority": 50,
           "conditions": {
-            "technical_requirements.animation_level": {"$equals": "moderate"}
+            "technical_requirements.animation_level": {
+              "$equals": "moderate"
+            }
           },
-          "action": "multiply",
+          "action": "multiply_path",
           "metadata": {
             "description": "Moderate animation complexity involves scroll-triggered effects, multi-step animations, performance optimization, and smooth interaction choreography",
-            "value": 1.5
+            "path": "_bases.technical_animation",
+            "value": 1.2
           }
         },
         {
@@ -73,10 +84,11 @@
               "$equals": "complex_interactive"
             }
           },
-          "action": "multiply",
+          "action": "multiply_path",
           "metadata": {
             "description": "Advanced interactive animations demand sophisticated JavaScript libraries, physics-based motion, gesture handling, and extensive performance tuning",
-            "value": 2.2
+            "path": "_bases.technical_animation",
+            "value": 1.35
           }
         },
         {
@@ -96,21 +108,25 @@
               }
             ]
           },
-          "action": "multiply",
+          "action": "multiply_path",
           "metadata": {
             "description": "Complex animations with legacy browser support require polyfills, fallback implementations, progressive enhancement strategies, and extensive cross-browser debugging",
-            "value": 2.8
+            "path": "_bases.technical_animation",
+            "value": 1.5
           }
         },
         {
           "id": "technical_requirements_browser_support_modern_only",
           "priority": 80,
           "conditions": {
-            "technical_requirements.browser_support": {"$equals": "modern_only"}
+            "technical_requirements.browser_support": {
+              "$equals": "modern_only"
+            }
           },
-          "action": "multiply",
+          "action": "multiply_path",
           "metadata": {
             "description": "Modern browsers only allow use of latest web standards, reducing testing complexity and eliminating legacy compatibility concerns",
+            "path": "_bases.technical_browser",
             "value": 1.0
           }
         },
@@ -118,12 +134,15 @@
           "id": "technical_requirements_browser_support_standart",
           "priority": 90,
           "conditions": {
-            "technical_requirements.browser_support": {"$equals": "standart"}
+            "technical_requirements.browser_support": {
+              "$equals": "standart"
+            }
           },
-          "action": "multiply",
+          "action": "multiply_path",
           "metadata": {
             "description": "Standard browser support includes recent versions, requiring modest backward compatibility testing and occasional polyfill implementation",
-            "value": 1.1
+            "path": "_bases.technical_browser",
+            "value": 1.05
           }
         },
         {
@@ -134,21 +153,25 @@
               "$equals": "legacy_included"
             }
           },
-          "action": "multiply",
+          "action": "multiply_path",
           "metadata": {
             "description": "Legacy browser support demands extensive polyfills, code transpilation, graceful degradation, alternative implementations, and comprehensive cross-browser testing",
-            "value": 1.4
+            "path": "_bases.technical_browser",
+            "value": 1.15
           }
         },
         {
           "id": "technical_requirements_cross_platform_web_only",
           "priority": 110,
           "conditions": {
-            "technical_requirements.cross_platform": {"$equals": "web_only"}
+            "technical_requirements.cross_platform": {
+              "$equals": "web_only"
+            }
           },
-          "action": "multiply",
+          "action": "multiply_path",
           "metadata": {
             "description": "Web-only deployment simplifies development with standard web technologies and conventional hosting requirements",
+            "path": "_bases.technical_platform",
             "value": 1.0
           }
         },
@@ -156,12 +179,15 @@
           "id": "technical_requirements_cross_platform_pwa",
           "priority": 120,
           "conditions": {
-            "technical_requirements.cross_platform": {"$equals": "pwa"}
+            "technical_requirements.cross_platform": {
+              "$equals": "pwa"
+            }
           },
-          "action": "multiply",
+          "action": "multiply_path",
           "metadata": {
             "description": "Progressive Web App requires service worker implementation, offline functionality, app manifest configuration, installation prompts, and mobile-specific optimizations",
-            "value": 1.4
+            "path": "_bases.technical_platform",
+            "value": 1.2
           }
         },
         {
@@ -172,9 +198,10 @@
               "$equals": "basic"
             }
           },
-          "action": "multiply",
+          "action": "multiply_path",
           "metadata": {
             "description": "Basic optimization includes standard minification, image compression, and essential best practices without extensive performance engineering",
+            "path": "_bases.technical_performance",
             "value": 1.0
           }
         },
@@ -186,10 +213,11 @@
               "$equals": "standart"
             }
           },
-          "action": "multiply",
+          "action": "multiply_path",
           "metadata": {
             "description": "Standard performance optimization incorporates code splitting, lazy loading, caching strategies, and performance monitoring implementation",
-            "value": 1.15
+            "path": "_bases.technical_performance",
+            "value": 1.08
           }
         },
         {
@@ -200,22 +228,25 @@
               "$equals": "aggressive"
             }
           },
-          "action": "multiply",
+          "action": "multiply_path",
           "metadata": {
             "description": "Aggressive optimization demands advanced techniques including critical CSS extraction, resource preloading, image optimization pipelines, CDN configuration, and comprehensive performance auditing",
-            "value": 1.4
+            "path": "_bases.technical_performance",
+            "value": 1.2
           }
         },
         {
           "id": "technical_requirements_offline_functionality",
           "priority": 160,
           "conditions": {
-            "technical_requirements.offline_functionality": {"$equals": true}
+            "technical_requirements.offline_functionality": {
+              "$equals": true
+            }
           },
           "action": "add",
           "metadata": {
             "description": "Offline capabilities require service worker architecture, cache management strategies, data synchronization logic, and extensive offline scenario testing",
-            "value": 600
+            "value": 1000
           }
         },
         {
@@ -244,7 +275,9 @@
           "id": "technical_requirements_pwa_requirements",
           "priority": 162,
           "conditions": {
-            "technical_requirements.cross_platform": {"$equals": "pwa"}
+            "technical_requirements.cross_platform": {
+              "$equals": "pwa"
+            }
           },
           "action": "warning",
           "metadata": {
@@ -256,8 +289,16 @@
           "priority": 163,
           "conditions": {
             "$and": [
-              { "technical_requirements.offline_functionality": {"$equals": true} },
-              { "functionality.database_integration": {"$equals": true} }
+              {
+                "technical_requirements.offline_functionality": {
+                  "$equals": true
+                }
+              },
+              {
+                "functionality.database_integration": {
+                  "$equals": true
+                }
+              }
             ]
           },
           "action": "warning",

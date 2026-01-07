@@ -11,7 +11,7 @@
           "metadata": {
             "description": "Post-launch support includes bug fixes, minor adjustments, content updates, and technical assistance during the stabilization period",
             "path": "support.postproduction_months.count",
-            "value": 150
+            "value": 200
           }
         },
         {
@@ -23,7 +23,7 @@
           "action": "multiply",
           "metadata": {
             "description": "Long-term post-production commitment allows for volume pricing efficiency",
-            "value": 0.8
+            "value": 0.85
           }
         },
         {
@@ -36,7 +36,7 @@
           "metadata": {
             "description": "Extended bug fix warranty provides ongoing stability maintenance and issue resolution beyond standard delivery",
             "path": "support.bug_fixes_months.count",
-            "value": 100
+            "value": 150
           }
         },
         {
@@ -60,7 +60,7 @@
           "action": "add",
           "metadata": {
             "description": "Training session includes comprehensive walkthrough, documentation review, content management instruction, and Q&A support",
-            "value": 300
+            "value": 500
           }
         },
         {
@@ -71,7 +71,7 @@
           "metadata": {
             "description": "Hosting management covers server monitoring, uptime maintenance, security patches, performance optimization, and technical troubleshooting",
             "path": "support.hosting_management_months.count",
-            "value": 50
+            "value": 75
           }
         },
         {
@@ -82,7 +82,7 @@
           "metadata": {
             "description": "Domain management includes DNS configuration, domain renewal tracking, nameserver updates, and subdomain setup",
             "path": "support.domain_management_months.count",
-            "value": 20
+            "value": 30
           }
         },
         {
@@ -97,7 +97,7 @@
           "action": "add",
           "metadata": {
             "description": "SSL certificate setup involves certificate acquisition, installation, auto-renewal configuration, and HTTPS enforcement implementation",
-            "value": 100
+            "value": 150
           }
         },
         {
@@ -112,7 +112,7 @@
           "action": "add",
           "metadata": {
             "description": "Custom domain email configuration requires MX record setup, email service integration, inbox configuration, and delivery testing",
-            "value": 200
+            "value": 300
           }
         },
         {
@@ -128,7 +128,7 @@
           "metadata": {
             "description": "Uptime monitoring includes availability checks, downtime alerts, performance tracking, and incident response coordination",
             "path": "support.monitoring_uptime_months.count",
-            "value": 80
+            "value": 120
           }
         },
         {
@@ -139,7 +139,7 @@
           "metadata": {
             "description": "Automated backup system involves scheduled backup configuration, secure storage setup, restoration testing, and recovery procedures documentation",
             "path": "support.backup_automation_months.count",
-            "value": 50
+            "value": 80
           }
         },
         {

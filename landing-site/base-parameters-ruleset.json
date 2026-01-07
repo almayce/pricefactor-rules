@@ -18,7 +18,7 @@
           "action": "add",
           "metadata": {
             "description": "Minimal project scope with a limited number of sections - suitable for simple landing pages with essential content structure",
-            "value": 300
+            "value": 800
           }
         },
         {
@@ -36,7 +36,7 @@
           "action": "add",
           "metadata": {
             "description": "Medium-sized project requiring more content organization and increased development effort to maintain consistency across multiple sections",
-            "value": 600
+            "value": 1500
           }
         },
         {
@@ -54,7 +54,7 @@
           "action": "add",
           "metadata": {
             "description": "Large-scale project with substantial content volume requiring complex navigation, advanced layout design, and significant development time",
-            "value": 1000
+            "value": 2500
           }
         },
         {
@@ -71,7 +71,7 @@
           "action": "add",
           "metadata": {
             "description": "Enterprise-level project with extensive content structure demanding sophisticated architecture, comprehensive navigation system, and extensive development resources",
-            "value": 1500
+            "value": 4000
           }
         },
         {
@@ -105,7 +105,7 @@
           "action": "multiply",
           "metadata": {
             "description": "Partial customization requires professional designer involvement to adapt and modify template elements, significantly increasing design and development effort",
-            "value": 1.8
+            "value": 1.5
           }
         },
         {
@@ -120,7 +120,7 @@
           "action": "multiply",
           "metadata": {
             "description": "Completely custom design from scratch demands extensive designer collaboration, multiple design iterations, unique component creation, and substantially more development time",
-            "value": 3.0
+            "value": 2.0
           }
         }
       ]

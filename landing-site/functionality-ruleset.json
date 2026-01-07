@@ -20,7 +20,7 @@
           "action": "add",
           "metadata": {
             "description": "Basic contact form includes simple validation, spam protection, and email delivery configuration",
-            "value": 150
+            "value": 200
           }
         },
         {
@@ -30,7 +30,7 @@
           "action": "add",
           "metadata": {
             "description": "Extended form incorporates multiple field types, conditional logic, file uploads, and advanced validation rules",
-            "value": 350
+            "value": 500
           }
         },
         {
@@ -40,7 +40,7 @@
           "action": "add",
           "metadata": {
             "description": "Multi-step form requires progress tracking, data persistence between steps, validation at each stage, and complex user flow management",
-            "value": 700
+            "value": 1000
           }
         },
         {
@@ -52,7 +52,7 @@
           "action": "add",
           "metadata": {
             "description": "Email service integration involves API configuration, template design, delivery tracking, and bounce handling setup",
-            "value": 250
+            "value": 300
           }
         },
         {
@@ -62,7 +62,7 @@
           "action": "add",
           "metadata": {
             "description": "CRM integration requires API authentication, data mapping, webhook configuration, lead routing logic, and ongoing synchronization maintenance",
-            "value": 600
+            "value": 800
           }
         },
         {
@@ -86,7 +86,7 @@
           "action": "add",
           "metadata": {
             "description": "Basic analytics setup includes standard tracking code implementation and essential event configuration",
-            "value": 100
+            "value": 150
           }
         },
         {
@@ -98,7 +98,7 @@
           "action": "add",
           "metadata": {
             "description": "Extended analytics tracking requires custom event implementation, enhanced e-commerce tracking, user flow analysis, and detailed reporting configuration",
-            "value": 300
+            "value": 400
           }
         },
         {
@@ -110,7 +110,7 @@
           "action": "add",
           "metadata": {
             "description": "Goal-based analytics demands conversion funnel setup, A/B testing configuration, advanced segmentation, custom dashboards, and ongoing optimization support",
-            "value": 600
+            "value": 800
           }
         },
         {
@@ -122,7 +122,7 @@
           "action": "add",
           "metadata": {
             "description": "Live chat widget integration includes platform selection, customization, notification setup, and mobile optimization",
-            "value": 150
+            "value": 200
           }
         },
         {
@@ -134,7 +134,7 @@
           "action": "add",
           "metadata": {
             "description": "Payment gateway integration demands PCI compliance considerations, secure API implementation, error handling, webhook management, and extensive transaction testing",
-            "value": 800
+            "value": 1200
           }
         },
         {
@@ -144,7 +144,7 @@
           "action": "add",
           "metadata": {
             "description": "Geolocation features require browser API integration, permission handling, map service configuration, and location-based content delivery logic",
-            "value": 400
+            "value": 600
           }
         },
         {
@@ -213,7 +213,7 @@
           "action": "add",
           "metadata": {
             "description": "Advanced social API integration requires OAuth implementation, posting capabilities, analytics integration, webhook handling, and complex permissions management",
-            "value": 800
+            "value": 1000
           }
         },
         {
@@ -225,7 +225,7 @@
           "action": "add",
           "metadata": {
             "description": "Calendar booking system demands availability management, time slot logic, timezone handling, email confirmations, reminder scheduling, and cancellation workflows",
-            "value": 1000
+            "value": 1500
           }
         },
         {
@@ -250,7 +250,7 @@
           "action": "add",
           "metadata": {
             "description": "User authentication system requires secure password handling, session management, registration flows, password recovery, email verification, and security best practices implementation",
-            "value": 800
+            "value": 1200
           }
         },
         {
@@ -262,7 +262,7 @@
           "action": "add",
           "metadata": {
             "description": "Database integration involves schema design, API endpoint development, data validation, query optimization, backup strategies, and migration management",
-            "value": 1200
+            "value": 1800
           }
         },
         {

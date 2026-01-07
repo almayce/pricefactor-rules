@@ -6,70 +6,100 @@
         {
           "id": "content_text_source_provided",
           "priority": 10,
-          "conditions": { "content.source": {"$equals": "provided"} },
-          "action": "multiply",
+          "conditions": {
+            "content.source": {
+              "$equals": "provided"
+            }
+          },
+          "action": "multiply_path",
           "metadata": {
             "description": "Client-provided text content allows immediate development without copywriting delays or content creation overhead",
+            "path": "_bases.content_text",
             "value": 1.0
           }
         },
         {
           "id": "content_text_source_copywriting",
           "priority": 20,
-          "conditions": { "content.source": {"$equals": "copywriting"} },
-          "action": "multiply",
+          "conditions": {
+            "content.source": {
+              "$equals": "copywriting"
+            }
+          },
+          "action": "multiply_path",
           "metadata": {
             "description": "Professional copywriting requires content strategy development, SEO optimization, brand voice alignment, and multiple revision cycles",
-            "value": 1.2
+            "path": "_bases.content_text",
+            "value": 1.1
           }
         },
         {
           "id": "content_text_source_full_development",
           "priority": 30,
           "conditions": {
-            "content.source": {"$equals": "full_development"}
+            "content.source": {
+              "$equals": "full_development"
+            }
           },
-          "action": "multiply",
+          "action": "multiply_path",
           "metadata": {
             "description": "Complete content development from scratch demands extensive research, content architecture planning, SEO strategy, and comprehensive copywriting services",
-            "value": 1.6
+            "path": "_bases.content_text",
+            "value": 1.25
           }
         },
         {
           "id": "content_images_source_provided",
           "priority": 40,
-          "conditions": { "content.images.source": {"$equals": "provided"} },
-          "action": "multiply",
+          "conditions": {
+            "content.images.source": {
+              "$equals": "provided"
+            }
+          },
+          "action": "multiply_path",
           "metadata": {
             "description": "Client-provided images reduce costs by eliminating sourcing and licensing efforts, though may require optimization and processing",
+            "path": "_bases.content_images",
             "value": 1.0
           }
         },
         {
           "id": "content_images_source_stocks",
           "priority": 50,
-          "conditions": { "content.images.source": {"$equals": "stocks"} },
-          "action": "multiply",
+          "conditions": {
+            "content.images.source": {
+              "$equals": "stocks"
+            }
+          },
+          "action": "multiply_path",
           "metadata": {
             "description": "Stock image selection involves careful curation, licensing management, brand alignment evaluation, and professional editing",
-            "value": 1.2
+            "path": "_bases.content_images",
+            "value": 1.05
           }
         },
         {
           "id": "content_images_source_custom",
           "priority": 60,
-          "conditions": { "content.images.source": {"$equals": "custom"} },
-          "action": "multiply",
+          "conditions": {
+            "content.images.source": {
+              "$equals": "custom"
+            }
+          },
+          "action": "multiply_path",
           "metadata": {
             "description": "Custom photography or illustration requires professional contractor coordination, art direction, multiple review rounds, and post-production work",
-            "value": 1.6
+            "path": "_bases.content_images",
+            "value": 1.2
           }
         },
         {
           "id": "content_images_count",
           "priority": 70,
           "conditions": {
-            "content.images.count": {"$greater-than-or-equals": 3}
+            "content.images.count": {
+              "$greater-than-or-equals": 3
+            }
           },
           "action": "multiply_path",
           "metadata": {
@@ -81,7 +111,11 @@
         {
           "id": "content_video_none",
           "priority": 80,
-          "conditions": { "content.video": {"$equals": "none"} },
+          "conditions": {
+            "content.video": {
+              "$equals": "none"
+            }
+          },
           "action": "add",
           "metadata": {
             "description": "No video content requirements simplify development with standard static content integration",
@@ -91,70 +125,99 @@
         {
           "id": "content_video_embed_only",
           "priority": 90,
-          "conditions": { "content.video": {"$equals": "embed"} },
+          "conditions": {
+            "content.video": {
+              "$equals": "embed"
+            }
+          },
           "action": "add",
           "metadata": {
             "description": "Embedded video integration requires player configuration, responsive sizing, performance optimization, and fallback handling",
-            "value": 100
+            "value": 200
           }
         },
         {
           "id": "content_video_editing",
           "priority": 100,
-          "conditions": { "content.video": {"$equals": "editing"} },
+          "conditions": {
+            "content.video": {
+              "$equals": "editing"
+            }
+          },
           "action": "add",
           "metadata": {
             "description": "Video editing services involve professional editing software, rendering time, format optimization, compression, and multiple export versions",
-            "value": 500
+            "value": 800
           }
         },
         {
           "id": "content_localization",
           "priority": 110,
-          "conditions": { "content.localization.count": {"$greater-than": 1} },
+          "conditions": {
+            "content.localization.count": {
+              "$greater-than": 1
+            }
+          },
           "action": "multiply_path",
           "metadata": {
             "description": "Multi-language support requires translation coordination, cultural adaptation, layout adjustments for text expansion, and extensive cross-language testing",
             "path": "content.localization.base_price",
-            "value": 1.6
+            "value": 2
           }
         },
         {
           "id": "content_copyright_client_has",
           "priority": 120,
-          "conditions": { "content.copyright": {"$equals": "client_has"} },
-          "action": "multiply",
+          "conditions": {
+            "content.copyright": {
+              "$equals": "client_has"
+            }
+          },
+          "action": "multiply_path",
           "metadata": {
             "description": "Existing copyright ownership eliminates licensing complexities and legal review requirements",
+            "path": "_bases.content_copyright",
             "value": 1.0
           }
         },
         {
           "id": "content_copyright_need_license",
           "priority": 130,
-          "conditions": { "content.copyright": {"$equals": "need_licence"} },
-          "action": "multiply",
+          "conditions": {
+            "content.copyright": {
+              "$equals": "need_licence"
+            }
+          },
+          "action": "multiply_path",
           "metadata": {
             "description": "License acquisition involves vendor research, usage rights verification, contract review, and ongoing license management",
-            "value": 1.2
+            "path": "_bases.content_copyright",
+            "value": 1.1
           }
         },
         {
           "id": "content_copyright_exclusive_creation",
           "priority": 140,
           "conditions": {
-            "content.copyright": {"$equals": "exclusive_creation"}
+            "content.copyright": {
+              "$equals": "exclusive_creation"
+            }
           },
-          "action": "multiply",
+          "action": "multiply_path",
           "metadata": {
             "description": "Exclusive content creation demands original asset development, comprehensive rights transfer, legal documentation, and intellectual property agreements",
-            "value": 1.5
+            "path": "_bases.content_copyright",
+            "value": 1.2
           }
         },
         {
           "id": "content_premium_fonts_1",
           "priority": 150,
-          "conditions": { "content.premium_fonts.count": {"$equals": 1} },
+          "conditions": {
+            "content.premium_fonts.count": {
+              "$equals": 1
+            }
+          },
           "action": "add",
           "metadata": {
             "description": "Single premium font requires licensing costs, web font optimization, and cross-browser compatibility testing",
@@ -164,7 +227,11 @@
         {
           "id": "content_premium_fonts_2",
           "priority": 160,
-          "conditions": { "content.premium_fonts.count": {"$equals": 2} },
+          "conditions": {
+            "content.premium_fonts.count": {
+              "$equals": 2
+            }
+          },
           "action": "add",
           "metadata": {
             "description": "Multiple premium fonts increase licensing expenses, page weight considerations, and typography system complexity",
@@ -174,7 +241,11 @@
         {
           "id": "content_premium_fonts_3",
           "priority": 170,
-          "conditions": { "content.premium_fonts.count": {"$equals": 3} },
+          "conditions": {
+            "content.premium_fonts.count": {
+              "$equals": 3
+            }
+          },
           "action": "add",
           "metadata": {
             "description": "Extensive premium font collection significantly impacts licensing costs, loading performance, and requires advanced font loading strategies",
