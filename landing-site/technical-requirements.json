@@ -27,7 +27,7 @@
           },
           "action": "subtract",
           "metadata": {
-            "description": "Desktop-only design simplifies development by eliminating mobile considerations and responsive layout complexity",
+            "description": "Non responsive design simplifies development by eliminating mobile considerations and layout complexity",
             "value": 200
           }
         },
