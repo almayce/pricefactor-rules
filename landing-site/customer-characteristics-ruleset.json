@@ -13,7 +13,7 @@
           "metadata": {
             "description": "Solo entrepreneur or freelancer typically has simpler requirements and straightforward decision-making process",
             "path": "_bases.customer_size",
-            "value": 1.0
+            "value": 0
           }
         },
         {
@@ -85,7 +85,7 @@
           "metadata": {
             "description": "General industry with standard requirements and no specialized compliance or domain expertise needed",
             "path": "_bases.customer_industry",
-            "value": 1.0
+            "value": 0
           }
         },
         {
@@ -204,7 +204,7 @@
           "metadata": {
             "description": "Business-to-consumer model focuses on user experience, simplified messaging, and consumer-friendly interfaces",
             "path": "_bases.customer_business",
-            "value": 1.0
+            "value": 0
           }
         },
         {
@@ -253,7 +253,7 @@
           "metadata": {
             "description": "Low reputational risk allows standard development practices without extra precautions or specialized risk management",
             "path": "_bases.customer_risk",
-            "value": 1.0
+            "value": 0
           }
         },
         {

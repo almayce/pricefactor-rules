@@ -15,7 +15,7 @@
           "metadata": {
             "description": "Client-provided text content allows immediate development without copywriting delays or content creation overhead",
             "path": "_bases.content_text",
-            "value": 1.0
+            "value": 0
           }
         },
         {
@@ -60,7 +60,7 @@
           "metadata": {
             "description": "Client-provided images reduce costs by eliminating sourcing and licensing efforts, though may require optimization and processing",
             "path": "_bases.content_images",
-            "value": 1.0
+            "value": 0
           }
         },
         {
@@ -177,7 +177,7 @@
           "metadata": {
             "description": "Existing copyright ownership eliminates licensing complexities and legal review requirements",
             "path": "_bases.content_copyright",
-            "value": 1.0
+            "value": 0
           }
         },
         {
