@@ -78,7 +78,7 @@
           "metadata": {
             "description": "Limited revision rounds require precise initial delivery and minimal iteration, reducing overall project flexibility",
             "path": "_bases.working_revisions",
-            "value": 1
+            "value": 0
           }
         },
         {
@@ -156,7 +156,7 @@
           "metadata": {
             "description": "Asynchronous communication provides efficient workflow with minimal interruptions, suitable for independent decision-makers",
             "path": "_bases.working_communication",
-            "value": 1
+            "value": 0
           }
         },
         {
@@ -171,7 +171,7 @@
           "metadata": {
             "description": "Regular meeting schedule requires dedicated time allocation, meeting preparation, and follow-up documentation",
             "path": "_bases.working_communication",
-            "value": 1.1
+            "value": 1.0
           }
         },
         {

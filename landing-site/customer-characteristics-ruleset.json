@@ -23,7 +23,7 @@
             "$and": [
               {
                 "customer_characteristics.company_size": {
-                  "$greater-than-or-equals": 1
+                  "$greater-than": 1
                 }
               },
               { "customer_characteristics.company_size": {"$less-than": 10} }

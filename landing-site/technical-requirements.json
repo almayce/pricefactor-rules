@@ -43,7 +43,7 @@
           "metadata": {
             "description": "Static interface without animations provides straightforward development with minimal interaction complexity",
             "path": "_bases.technical_animation",
-            "value": 1.0
+            "value": 0
           }
         },
         {
@@ -58,7 +58,7 @@
           "metadata": {
             "description": "Basic hover effects and simple transitions require CSS animation development, timing adjustments, and interaction refinement",
             "path": "_bases.technical_animation",
-            "value": 1.1
+            "value": 1.0
           }
         },
         {
@@ -127,7 +127,7 @@
           "metadata": {
             "description": "Modern browsers only allow use of latest web standards, reducing testing complexity and eliminating legacy compatibility concerns",
             "path": "_bases.technical_browser",
-            "value": 1.0
+            "value": 0
           }
         },
         {
@@ -172,7 +172,7 @@
           "metadata": {
             "description": "Web-only deployment simplifies development with standard web technologies and conventional hosting requirements",
             "path": "_bases.technical_platform",
-            "value": 1.0
+            "value": 0
           }
         },
         {
@@ -202,7 +202,7 @@
           "metadata": {
             "description": "Basic optimization includes standard minification, image compression, and essential best practices without extensive performance engineering",
             "path": "_bases.technical_performance",
-            "value": 1.0
+            "value": 0
           }
         },
         {
